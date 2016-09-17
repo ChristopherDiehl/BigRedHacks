@@ -5,6 +5,18 @@
     font-weight: bold;
     }
 
-.col-md-4 {
-	border-style: solid 5px;
+/*.col-md-4 .crumTitles{
+	outline: solid 1px;
+	height: 50px;
 }
+
+
+.col-md-4 .crumContent{
+	outline: solid 1px;
+	height: 400px;
+}*/
+
+.col-md-4 {
+	outline: solid 1px;
+}
+
