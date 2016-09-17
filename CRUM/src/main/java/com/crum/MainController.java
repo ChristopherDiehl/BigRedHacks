@@ -29,11 +29,11 @@ public class MainController {
 	@Autowired 
 	private UserRepository userRepo;
 	
-	@RequestMapping(value={"/index"}, method=RequestMethod.GET)
+	@RequestMapping(value="/")
 	public String index(ModelMap model)
 	{
 
-		return "index";
+		return "aboutUs";
 	}
 
 
