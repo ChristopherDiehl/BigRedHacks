@@ -29,13 +29,23 @@ public class MainController {
 	@Autowired 
 	private UserRepository userRepo;
 	
-	@RequestMapping(value="/")
+	@RequestMapping(value={"/","/index"})
 	public String index(ModelMap model)
 	{
-
-		return "aboutUs";
+		return "index";
 	}
 
+	@RequestMapping(value="/login", method=RequestMethod.GET)
+	public String login(Model model,HttpServletRequest request)
+	{	
+		return "login";
+	}
+	
+	@RequestMapping(value="/login", method=RequestMethod.POST)
+	public String loginPost(Model model)
+	{	
 
+		return "index";
+	}
 
 }

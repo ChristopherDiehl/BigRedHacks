@@ -15,6 +15,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
       httpSecurity
       .authorizeRequests()
+        .antMatchers("/error","/newUser").permitAll()
         .anyRequest().authenticated()
         .and()
       .formLogin()
@@ -23,14 +24,21 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         .permitAll()
         .defaultSuccessUrl("/index");
   } 
-  
+  /*
   @Autowired
   public void configAuthBuilder(AuthenticationManagerBuilder builder) throws Exception {
       builder.userDetailsService(userDetailsService); 
-  }
+  }*/
+
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        auth
+            .inMemoryAuthentication()
+                .withUser("user").password("password").roles("USER");
+    }
 
 }
-
+/*
 @EnableWebSecurity
 @Configuration
 @Component
@@ -52,4 +60,4 @@ public class SecUserDetailsService implements UserDetailsService{
     }
 }
 
-
+*/
