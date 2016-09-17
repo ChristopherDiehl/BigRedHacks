@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>CRUM Board</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
-  <link rel="stylesheet" href="resources/static/css/custom.css"/>
-  <link rel="stylesheet" href="resources/static/css/bootstrap.css"/>
+  <link rel="stylesheet" href="css/custom.css"/>
+  <link rel="stylesheet" href="css/bootstrap.css"/>
   <style>
     .draggable { width: 90px; height: 80px; padding: 5px; float: left; margin: 0 10px 10px 0; font-size: .9em; }
     .ui-widget-header p, .ui-widget-content p { margin: 0; }
@@ -19,9 +19,6 @@
       $( "#draggable" ).draggable({ grid: [ 20, 20 ] })
       $( "#draggable2" ).draggable({ grid: [ 20, 20 ] })
       $( "#draggable3" ).draggable({ grid: [ 20, 20 ] })
-      $( "#draggable4" ).draggable({ grid: [ 20, 20 ] })
-      $( "#draggable5" ).draggable({ grid: [ 20, 20 ] })
-      $( "#draggable6" ).draggable({ grid: [ 20, 20 ] })
     } );
   </script>
 </head>
@@ -30,16 +27,18 @@
   .tg  {border-collapse:collapse;border-spacing:0;}
   .tg td{font-family:Arial, sans-serif;font-size:14px;padding:100px 100px; border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
 </style>
-<div class="row">
-  <div class="col-md-4">
-    <p>Backlog</p>
+<div class = "container">
+  <div class="row">
+    <div class="col-md-4">
+      <p>Backlog</p>
+    </div>
+    <div class="col-md-4">
+      <p>In Progress</p>
+    </div> 
+    <div class="col-md-4">
+      <p>Complete</p>
+    </div>     
   </div>
-  <div class="col-md-4">
-    <p>In Progress</p>
-  </div> 
-  <div class="col-md-4">
-    <p>Complete</p>
-  </div>     
 </div>
 
 <div class="row">
@@ -53,7 +52,7 @@
     
   </div>     
 </div>
-<br style="clear:both">
+<br style="clear:both"/>
 
 <div id="draggable" class="draggable ui-widget-content">
   <p>Bacon ipsum dolor amet pastrami rump beef picanha brisket</p>
@@ -64,18 +63,6 @@
 </div>
 
 <div id="draggable3" class="draggable ui-widget-content">
-  <p>Bacon ipsum dolor amet pastrami rump beef picanha brisket</p>
-</div>
-
-<div id="draggable4" class="draggable ui-widget-content">
-  <p>Bacon ipsum dolor amet pastrami rump beef picanha brisket</p>
-</div>
-
-<div id="draggable5" class="draggable ui-widget-content">
-  <p>Bacon ipsum dolor amet pastrami rump beef picanha brisket</p>
-</div>
-
-<div id="draggable6" class="draggable ui-widget-content">
   <p>Bacon ipsum dolor amet pastrami rump beef picanha brisket</p>
 </div>
 
