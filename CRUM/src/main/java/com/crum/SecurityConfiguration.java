@@ -22,7 +22,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         .loginPage("/login")
         .failureUrl("/login-error")
         .permitAll()
-        .defaultSuccessUrl("/index");
+        .defaultSuccessUrl("/index")
+        .and()
+	  .csrf().disable();
+
+      
   } 
   /*
   @Autowired
