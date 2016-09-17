@@ -14,7 +14,13 @@
   </style>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  
+  <script type="text/javascript"></script>>
+      $( function() {
+        $( "#draggable" ).draggable({ grid: [ 20, 20 ] })
+        $( "#draggable2" ).draggable({ grid: [ 20, 20 ] })
+        $( "#draggable3" ).draggable({ grid: [ 20, 20 ] })
+      } );
+    </script>
   <!-- Add new sticky note -->
   <script type="text/javascript">
     var s '<div class="row note img-rounded" id="draggable"><div class="col-md-8 img-rounded"><div class="row note_username img-rounded"><p>Username</p></div><div class="row note_content"><p>" Content "</p></div></div></div>'
@@ -29,15 +35,15 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-4">
-      <p>Backlog</p>
+      <p class="header">Backlog</p>
       <a onclick="createNote()" href="#" class="floatRight"><span class="glyphicon glyphicon-plus"></span></a>
     </div>
     <div class="col-md-4">
-      <p>In Progress</p>
+      <p class="header">In Progress</p>
       <a onclick="createNote()" href="#" class="floatRight"><span class="glyphicon glyphicon-plus"></span></a>
     </div> 
     <div class="col-md-4">
-      <p>Complete</p>
+      <p class="header">Complete</p>
       <a onclick="createNote()" href="#" class="floatRight"><span class="glyphicon glyphicon-plus"></span></a>
     </div>     
   </div>
