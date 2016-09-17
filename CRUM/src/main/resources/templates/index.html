@@ -24,7 +24,8 @@
 
   <!-- Add new sticky note -->
   <script type="text/javascript">
-    var s '<div class="row note img-rounded" id="draggable"><div class="col-md-8 img-rounded"><div class="row note_username img-rounded"><p>Username</p></div><div class="row note_content"><p>" Content "</p></div></div></div>'
+    // var s '<div class="row note img-rounded" id="draggable"><div class="col-md-8 img-rounded"><div class="row note_username img-rounded"><p>Username</p></div><div class="row note_content"><p>" Content "</p></div></div></div>'
+    // 
   </script>
 
 </head>
@@ -35,20 +36,26 @@
 </style>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-4">
-      <p class="header">Backlog</p>
-      <a onclick="createNote()" href="#" class="floatRight"><span class="glyphicon glyphicon-plus"></span></a>
+    <div class="col-sm-4">
+      <div class="padding">
+        <p class="header">Backlog</p>
+        <a onclick="createNote()" href="#" class="floatRight"><span class="glyphicon glyphicon-plus"></span></a>
+      </div>
     </div>
-    <div class="col-md-4">
-      <p class="header">In Progress</p>
-      <a onclick="createNote()" href="#" class="floatRight"><span class="glyphicon glyphicon-plus"></span></a>
+    <div class="col-sm-4">
+      <div class="padding">
+        <p class="header">In Progress</p>
+        <a onclick="createNote()" href="#" class="floatRight"><span class="glyphicon glyphicon-plus"></span></a>
+      </div>
     </div> 
-    <div class="col-md-4">
-      <p class="header">Complete</p>
-      <a onclick="createNote()" href="#" class="floatRight"><span class="glyphicon glyphicon-plus"></span></a>
+    <div class="col-sm-4">
+      <div class="padding">
+        <p class="header">Complete</p>
+        <a onclick="createNote()" href="#" class="floatRight"><span class="glyphicon glyphicon-plus"></span></a>
+      </div>
     </div>     
   </div>
-
+foo
   <br style="clear:both"/>
 
   <div class="row note img-rounded" id="draggable">
