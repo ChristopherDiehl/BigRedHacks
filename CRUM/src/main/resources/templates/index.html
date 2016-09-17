@@ -14,13 +14,12 @@
   </style>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-    $( function() {
-      $( "#draggable" ).draggable({ grid: [ 20, 20 ] })
-      $( "#draggable2" ).draggable({ grid: [ 20, 20 ] })
-      $( "#draggable3" ).draggable({ grid: [ 20, 20 ] })
-    } );
+  
+  <!-- Add new sticky note -->
+  <script type="text/javascript">
+    var s '<div class="row note img-rounded" id="draggable"><div class="col-md-8 img-rounded"><div class="row note_username img-rounded"><p>Username</p></div><div class="row note_content"><p>" Content "</p></div></div></div>'
   </script>
+
 </head>
 <body>
  <style type="text/css">
@@ -30,31 +29,31 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-4">
-      <a href=""><span class="glyphicon glyphicon-plus"></span></a>
       <p>Backlog</p>
+      <a onclick="createNote()" href="#" class="floatRight"><span class="glyphicon glyphicon-plus"></span></a>
     </div>
     <div class="col-md-4">
-      <a href=""><span class="glyphicon glyphicon-plus"></span></a>
       <p>In Progress</p>
+      <a onclick="createNote()" href="#" class="floatRight"><span class="glyphicon glyphicon-plus"></span></a>
     </div> 
     <div class="col-md-4">
-      <a href=""><span class="glyphicon glyphicon-plus"></span></a>
       <p>Complete</p>
+      <a onclick="createNote()" href="#" class="floatRight"><span class="glyphicon glyphicon-plus"></span></a>
     </div>     
   </div>
 
-<br style="clear:both"/>
+  <br style="clear:both"/>
 
-<div class="row note img-rounded" id ="draggable">
-  <div class="col-md-8 img-rounded">
-    <div class="row note_username img-rounded">
-        <p> Username</p>
-    </div>
-    <div class="row note_content">
-     <p>" Content "</p>
+  <div class="row note img-rounded" id="draggable">
+    <div class="col-md-8 img-rounded">
+      <div class="row note_username img-rounded">
+          <p>Username</p>
+      </div>
+      <div class="row note_content">
+       <p>" Content "</p>
+      </div>
     </div>
   </div>
-</div>
 </div>
 </body>
 </html>
