@@ -4,3 +4,7 @@
     color: #333333;
     font-weight: bold;
     }
+
+.col-md-4 {
+	border-style: solid 5px;
+}
