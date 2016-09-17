@@ -20,3 +20,26 @@
 	outline: solid 1px;
 }
 
+.note_username {
+	padding-left: 5%;
+   border-bottom-style: solid;
+   border-bottom-width: thin;
+   border-right-width:thin;
+   border-right-style:solid;
+   max-width:90%;
+}
+
+.note {
+	border-color: black;
+	border-style: solid;
+	border-width: thin;
+	max-width: 15%;
+	background-color: #d4e29c;
+}
+
+.note_content{
+	padding-left: 5%;
+	padding-top: 15px;
+}
+
+
