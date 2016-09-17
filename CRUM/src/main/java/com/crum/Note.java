@@ -9,6 +9,7 @@ public class Note
 	private String content;
 	private String name;
 	private String div;
+	private String htmlid;
 
 	public Note(String name, String content,String div) {
 		this.content = content;
@@ -28,10 +29,16 @@ public class Note
 		this.name = name;
 	}
 	public String getDiv() {
-    return div;
+		return div;
 	}
 	public void setDiv(String div) {
 		this.div = div;
+	}
+	public void setHtmlId(String htmlid){
+		this.htmlid = htmlid;
+	}
+	public String getHtmlId() {
+		return htmlid;
 	}
 
 }

@@ -55,19 +55,43 @@
       </div>
     </div>     
   </div>
-foo
+
   <br style="clear:both"/>
 
   <div class="row note img-rounded" id="draggable">
-    <div class="col-md-8 img-rounded">
-      <div class="row note_username img-rounded">
-          <p>Username</p>
-      </div>
-      <div class="row note_content">
-       <p>" Content "</p>
-      </div>
-    </div>
+    <div class="col-md-10 img-rounded">
+      <form id ="note" action="/saveNote">
+        <div class="row note_username img-rounded">
+          <input type="text" style="width: 75%;" name ="name" class="note_input" value="Name" />
+          <a href="javascript:saveMyNote('id');">
+           <span class="glyphicon glyphicon-floppy-disk"></span>
+         </a>
+       </div>
+       <div class="row note_content">
+         <textarea rows="3" name="content" class="note_input">Content</textarea>
+       </div>
+     </form>
+   </div>
   </div>
 </div>
+
 </body>
 </html>
+
+<script th:inline="javascript">
+
+var id = [[${max_id}]]
+function saveMyNote(id) {
+  $.post( "/saveNote", { name: $('#'+id+' input[name="message"]').val(), content: $('#'+id+' input[name="message"]').val(),div:"div0" } );
+}
+
+function createNote() {
+  $div = $(' <div class="row note img-rounded" id="draggable"> <div class="col-md-10 img-rounded">  </div> </div>');
+  $div.append('<form id ="note" action="/saveNote"></form>');
+  $div.append('<div class="row note_username img-rounded">  <input type="text" style="width: 75%;" name ="name" class="note_input" value="Name" /> </div>');
+  $div.append('<a href="javascript:saveMyNote("'+id+'");"> <span class="glyphicon glyphicon-floppy-disk"></span></a>');
+  $div.append('<div class="row note_content">   <textarea rows="3" name="content" class="note_input">Content</textarea> </div>');
+  $('body').append($form);
+}
+
+</script>
