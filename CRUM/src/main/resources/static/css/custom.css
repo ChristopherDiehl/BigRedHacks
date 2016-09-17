@@ -5,17 +5,6 @@
     font-weight: bold;
     }
 
-/*.col-md-4 .crumTitles{
-	outline: solid 1px;
-	height: 50px;
-}
-
-
-.col-md-4 .crumContent{
-	outline: solid 1px;
-	height: 400px;
-}*/
-
 .col-md-4 {
 	outline: solid 1px;
 }
@@ -34,7 +23,7 @@
 	border-style: solid;
 	border-width: thin;
 	max-width: 15%;
-	background-color: #d4e29c;
+	background-color: #ffff80;
 }
 
 .note_content{
