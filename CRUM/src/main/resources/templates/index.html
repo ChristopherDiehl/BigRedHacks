@@ -16,7 +16,7 @@
 
 <div class="container-fluid">
   <div class="row no-gutter">
-    <div class="col-sm-4">
+    <div class="col-sm-4 div0">
       <p class="header">Backlog</p>
       <a onclick="createNote('noteholder', '')" href="#" class="floatRight"><span class="glyphicon glyphicon-plus"></span></a>
       <div th:each="note: ${div0}" class="row note img-rounded draggable" >
@@ -35,11 +35,11 @@
        </div>
       </div>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-4 div1">
       <p class="header">In Progress</p>
       <a onclick="createNote('noteholder', '')" href="#" class="floatRight"><span class="glyphicon glyphicon-plus"></span></a>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-4 div2">
       <p class="header">Complete</p>
       <a onclick="createNote('noteholder','')" href="#" class="floatRight"><span class="glyphicon glyphicon-plus"></span></a>
     </div>     
@@ -72,6 +72,7 @@ function saveMyNote(id) {
   $.post( "/saveNote", { name: name, content: content,div:"div0" ,id: id} );
 }
 </script>
+
 <script>
   
 
