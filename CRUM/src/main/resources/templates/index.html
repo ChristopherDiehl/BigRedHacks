@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>CRUM Board</title>
+  <title>{S}CRUM BOARD</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
   <link rel="stylesheet" href="css/bootstrap.css"/>
   <link rel="stylesheet" href="css/custom.css"/>
@@ -13,7 +13,7 @@
 
 </head>
 <body>
-<h1>CRUM Board</h1>
+<h1><span style="color:rgba(234, 19, 19, 0.63)">{S}</span>CRUM BOARD</h1>
 <div class="container-fluid">
   <div class="row no-gutter">
     <div class="col-sm-4 div0">
@@ -91,7 +91,8 @@
       <script type="text/javascript">
         document.write(new Date().getFullYear());
       </script>
-      CRUM
+      <span style="color:rgba(234, 19, 19, 0.63)">
+      {S}</span>CRUM<br />Made by <span style="text-decoration: underline;">C</span>hris and <span style="text-decoration: underline;">R</span>obbie
     </p>
     </div>
   </div>
@@ -117,7 +118,6 @@ function saveMyNote(id,div) {
   var form = document.getElementById(formId.replace('#',''));
   var name = form.elements[0].value;
   var content= form.elements[1].value;
-  console.log('div'+div);
   $.post( "/saveNote", { name: name, content: content, div:div ,id: id} );
 }
 

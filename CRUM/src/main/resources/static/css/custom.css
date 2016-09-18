@@ -86,6 +86,8 @@ span.glyphicon-plus {
 	font-size: 22px;
 }
 .copyright{
-	align:center;
-	font-color:white;
+	text-align:center;
+	color:white;
+	font-size: 15px;
+   font-weight: bold;
 }
