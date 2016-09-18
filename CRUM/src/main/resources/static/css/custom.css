@@ -13,6 +13,8 @@ body {
 	outline: solid 1px;
 	height: 550px;
 	background-color: white;
+	padding:0px;
+	margin:0px;
 }
 
 .note_username {
@@ -56,4 +58,21 @@ p.header {
 .padding {
 	margin:10px;
 	padding:10px;
+}
+
+.draggable { 
+	width: 90px;
+	height: 80px;
+	padding: 5px;
+	float: left;
+	margin: 0 10px 10px 0;
+	font-size: .9em;
+}
+
+.ui-widget-header p, .ui-widget-content p { 
+	margin: 0; 
+}
+
+#snaptarget { 
+	height: 140px;
 }
