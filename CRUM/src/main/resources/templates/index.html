@@ -138,7 +138,7 @@ function createNote(divToAppendTo,htmlid) {
     htmlid = id + 1;
     id++;
   }
-  $div = $(' <div class="row note img-rounded draggable" ><form id ="note'+id+'" action="/saveNote"><div class="row note_username img-rounded"><input type="text" style="width: 75%;" name ="name" class="note_input" value="Name" /><a href="javascript:saveMyNote('+id+'div0);">  <span class="glyphicon glyphicon-floppy-disk"></span></a></div> <div class="row note_content"><textarea rows="3" name="content" class="note_input">Content</textarea></div></form></div>');
+  $div = $(' <div class="row note img-rounded draggable" ><form id ="note'+id+'" action="/saveNote"><div class="row note_username img-rounded"><input type="text" style="width: 75%;" name ="name" class="note_input" value="Name" /><a href="javascript:saveMyNote('+id+'div0);">  <span class="glyphicon glyphicon-floppy-disk"></span></a><a href="#"><span class="glyphicon glyphicon-trash"></span></a></div> <div class="row note_content"><textarea rows="3" name="content" class="note_input">Content</textarea></div></form></div>');
 
   $('.'+divToAppendTo).append($div);
   $( '.draggable' ).draggable();

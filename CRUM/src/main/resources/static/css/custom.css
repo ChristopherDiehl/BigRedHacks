@@ -1,5 +1,5 @@
 body {
-	background-color: #cccccc
+	background-image: url("/img/circuit.jpg");
 }
 
 .ui-widget-header {
@@ -12,7 +12,7 @@ body {
 .col-sm-4 {
 	outline: solid 1px;
 	height: 550px;
-	background-color: white;
+	background-color: rgba(255, 255, 255, 0.85);
 	padding:0px;
 	margin:0px;
 }
@@ -31,7 +31,7 @@ body {
 	border-style: solid;
 	border-width: thin;
 	width:250px;
-	background-color: #ffff80;
+	background-color: white;
 	z-index: 2;
 }
 
@@ -83,4 +83,5 @@ p.header {
 
 h1 {
 	text-align: center;
+	color: white;
 }
