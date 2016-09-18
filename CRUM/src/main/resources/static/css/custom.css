@@ -23,7 +23,8 @@ body {
    border-bottom-width: thin;
    border-right-width:thin;
    border-right-style:solid;
-   max-width:90%;
+   max-width:60%;
+   margin-left: 1px;
 }
 
 .note {
@@ -35,8 +36,9 @@ body {
 }
 
 .note_content{
-	padding-left: 5%;
 	padding-top: 15px;
+	padding-left: 10%;
+
 }
 
 /*.container-fluid {
@@ -65,14 +67,7 @@ p.header {
 	padding:10px;
 }
 
-.draggable { 
-	width: 90px;
-	height: 80px;
-	padding: 5px;
-	float: left;
-	margin: 0 10px 10px 0;
-	font-size: .9em;
-}
+
 
 .ui-widget-header p, .ui-widget-content p { 
 	margin: 0; 
