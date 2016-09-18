@@ -83,6 +83,9 @@
     </div>
   </div>
   
+<!--   <br style="clear:both"/> -->
+
+
 </div>
 
 </body>
@@ -98,10 +101,9 @@ id--;
 function saveMyNote(id,div) {
 
   var formId = '#note'+id;
-  var form = document.getElementById(formId);
-  
-  var name = $("input[name='name']" ).val();
-  var content=$("textarea[name='content']" ).val();
+  var form = document.getElementById(formId.replace('#',''));
+  var name = form.elements[0].value;
+  var content= form.elements[1].value;
   console.log('div'+div);
   $.post( "/saveNote", { name: name, content: content, div:div ,id: id} );
 }
@@ -118,7 +120,7 @@ $(function(){
           if($(this).position().top >550 || $(this).position().left < 477){
             saveMyNote(id,'div0');
           }
-          else if ($(this).position().top<870) {
+          else if ($(this).position().left<870) {
             saveMyNote(id,'div1');
           } else {
             saveMyNote(id,'div2');
