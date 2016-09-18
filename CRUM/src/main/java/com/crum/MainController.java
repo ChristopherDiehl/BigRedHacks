@@ -22,16 +22,12 @@ public class MainController {
 	@RequestMapping(value={"/","/index"})
 	public String index(ModelMap model)
 	{
-		ArrayList<Note> div0 = noteRepo.findAllByDiv("div0");
-		ArrayList<Note> div1 = noteRepo.findAllByDiv("div1");
-		ArrayList<Note> div2 = noteRepo.findAllByDiv("div2");
-		ArrayList<Note> div3 = noteRepo.findAllByDiv("noteholder");
-
-		model.put("div0", div0);
-		model.put("div1", div1);
-		model.put("div2",div2);
-		model.put("noteholder",div3);
-		model.put("max_id",NoteHelper.findGreatestHtmlId(noteRepo.findAll()));
+		model.put("div0", noteRepo.findAllByDiv("div0"));
+		model.put("div1", noteRepo.findAllByDiv("div1"));
+		model.put("div2", noteRepo.findAllByDiv("div2"));
+		ArrayList<Note> notes = noteRepo.findAll();
+		model.put("notes",notes);
+		model.put("max_id",NoteHelper.findGreatestHtmlId(notes));
 		
 		
 		return "index";

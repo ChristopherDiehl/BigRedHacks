@@ -24,14 +24,13 @@ body {
    border-right-width:thin;
    border-right-style:solid;
    max-width:60%;
-   margin-left: 1px;
 }
 
 .note {
 	border-color: black;
 	border-style: solid;
 	border-width: thin;
-	max-width: 15%;
+	width:250px;
 	background-color: #ffff80;
 }
 

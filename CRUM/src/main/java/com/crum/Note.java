@@ -41,7 +41,7 @@ public class Note implements Comparable<Note>
 	public void setDiv(String div) {
 		this.div = div;
 	}
-	public void setHtmlId(String htmlid){
+	public void setHtmlid(String htmlid){
 		this.htmlid = htmlid;
 	}
 	public String getHtmlId() {
