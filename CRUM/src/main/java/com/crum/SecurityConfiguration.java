@@ -15,7 +15,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
       httpSecurity
       .authorizeRequests()
-        .antMatchers("/error","/newUser").permitAll()
+        .antMatchers("/error","/newUser","/index","/saveNote").permitAll()
         .anyRequest().authenticated()
         .and()
       .formLogin()

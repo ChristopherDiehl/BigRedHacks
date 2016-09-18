@@ -26,11 +26,11 @@
   <div class="row no-gutter">
     <div class="col-sm-4">
       <p class="header">Backlog</p>
-      <a onclick="createNote('noteholder','')" href="#" class="floatRight"><span class="glyphicon glyphicon-plus"></span></a>
+      <a onclick="createNote('noteholder', '')" href="#" class="floatRight"><span class="glyphicon glyphicon-plus"></span></a>
     </div>
     <div class="col-sm-4">
       <p class="header">In Progress</p>
-      <a onclick="createNote('noteholder','')" href="#" class="floatRight"><span class="glyphicon glyphicon-plus"></span></a>
+      <a onclick="createNote('noteholder', '')" href="#" class="floatRight"><span class="glyphicon glyphicon-plus"></span></a>
     </div>
     <div class="col-sm-4">
       <p class="header">Complete</p>
@@ -55,24 +55,23 @@
 
 var id = [[${max_id}]]
 function saveMyNote(id) {
-  $.post( "/saveNote", { name: $('#'+id+' input[name="message"]').val(), content: $('#'+id+' input[name="message"]').val(),div:"div0" ,id: id} );
+  var formId = '#note'+id;
+  var name = $("input[name='name']" ).val();
+  var content=$("textarea[name='content']" ).val();
+
+  $.post( "/saveNote", { name: name, content: content,div:"div0" ,id: id} );
 }
 </script>
 <script>
   
-$.load(function(){
-	$( ".draggable" ).draggable();
-});
 
 function createNote(divToAppendTo,htmlid) {
   if(htmlid == null || htmlid == '') {
     htmlid = id + 1;
     id++;
   }
-  alert("function created homie");
-  $div = $(' <div class="row note img-rounded draggable" > <div class="col-md-10 img-rounded"> <form id ="note" action="/saveNote">  </form></div> </div>');
-  $div.append('<div class="row note_username img-rounded"><input type="text" style="width: 75%;" name ="name" class="note_input" value="Name" /><a href="javascript:saveMyNote('+id+');">  <span class="glyphicon glyphicon-floppy-disk"></span></a></div>');
-  $div.append('<div class="row note_content"><textarea rows="3" name="content" class="note_input">Content</textarea></div>');
+  $div = $(' <div class="row note img-rounded draggable" ><form id ="note'+id+'" action="/saveNote"><div class="row note_username img-rounded"><input type="text" style="width: 75%;" name ="name" class="note_input" value="Name" /><a href="javascript:saveMyNote('+id+');">  <span class="glyphicon glyphicon-floppy-disk"></span></a></div> <div class="row note_content"><textarea rows="3" name="content" class="note_input">Content</textarea></div></form></div>');
+
   $('.'+divToAppendTo).append($div);
   $( '.draggable' ).draggable();
 }

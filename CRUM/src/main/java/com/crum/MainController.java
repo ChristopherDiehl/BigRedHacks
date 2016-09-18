@@ -40,13 +40,16 @@ public class MainController {
 	@RequestMapping(value="/saveNote", method=RequestMethod.POST)
 	public String saveNote(Model model,HttpServletRequest request)
 	{	
+		System.out.println("saving note");
 		Note note = new Note(request.getParameter("name"),
 									request.getParameter("content"),
 									request.getParameter("div"),
 									request.getParameter("id")
 									);
+
+		System.out.println("note: "+note.getName()+"content: "+note.getContent());
 		noteRepo.save(note);
-		return "/"; 
+		return "index"; 
 	}
 
 	@RequestMapping(value="/login", method=RequestMethod.GET)
