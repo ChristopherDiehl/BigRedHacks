@@ -23,7 +23,7 @@ body {
    border-bottom-width: thin;
    border-right-width:thin;
    border-right-style:solid;
-   max-width:75%;
+   /*max-width:75%;*/
 }
 
 .note {
@@ -74,4 +74,13 @@ p.header {
 
 #snaptarget { 
 	height: 140px;
+}
+
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+h1 {
+	text-align: center;
 }

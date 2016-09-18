@@ -13,7 +13,7 @@
 
 </head>
 <body>
-
+<h1>CRUM Board</h1>
 <div class="container-fluid">
   <div class="row no-gutter">
     <div class="col-sm-4 div0">
@@ -26,6 +26,9 @@
               <input type="text" th:value="${note.name}" style="width: 75%;" class="note_input" value="Username" />
               <a th:href="'javascript:saveMyNote('+ ${note.htmlId}+'div0)'">
                <span class="glyphicon glyphicon-floppy-disk"></span>
+             </a>
+             <a href="#">
+               <span class="glyphicon glyphicon-trash"></span>
              </a>
            </div>
            <div class="row note_content">
