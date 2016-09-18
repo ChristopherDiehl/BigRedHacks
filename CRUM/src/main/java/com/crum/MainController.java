@@ -28,23 +28,32 @@ public class MainController {
 		ArrayList<Note> notes = noteRepo.findAll();
 		model.put("notes",notes);
 		model.put("max_id",NoteHelper.findGreatestHtmlId(notes));
-		
-		
 		return "index";
 	}
 
 	@RequestMapping(value="/saveNote", method=RequestMethod.POST)
 	public String saveNote(Model model,HttpServletRequest request)
 	{	
-		System.out.println("saving note");
-		Note note = new Note(request.getParameter("name"),
-									request.getParameter("content"),
-									request.getParameter("div"),
-									request.getParameter("id")
-									);
+		String id = request.getParameter("id");
+		if(id == null || id.equals("")) {
+			Note note = noteRepo.findById(id);
+			if(note != null) {
+				note.setName(request.getParameter("name"));
+				note.setDiv(request.getParameter("div"));
+				note.setContent(request.getParameter("content"));
+			} else {
+				note = new Note(request.getParameter("name"),
+						request.getParameter("content"),
+						request.getParameter("div"),
+						id
+						);
+			}
+			noteRepo.save(note);
+		} else {
+			System.out.println("Post failed");
+		}
 
-		System.out.println("note: "+note.getName()+"content: "+note.getContent());
-		noteRepo.save(note);
+		
 		return "index"; 
 	}
 
