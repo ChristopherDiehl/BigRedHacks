@@ -90,7 +90,8 @@ function createNote(divToAppendTo,htmlid) {
 <script th:inline="javascript">
   var note = $(".note");
   // note.draggable();
-  var notePositon = note.position();
+  //var notePositon = note.position();
+  var notePosition = note.position();
   /*<![CDATA[*/
   $(".note").bind("drag", function(event, ui) {
     alert('hello');
