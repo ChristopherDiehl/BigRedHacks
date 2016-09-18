@@ -2,7 +2,7 @@ package com.crum;
 
 import org.springframework.data.annotation.Id;
 
-public class Note 
+public class Note implements Comparable<Note>
 {
 	@Id
 	private String id;
@@ -11,16 +11,23 @@ public class Note
 	private String div;
 	private String htmlid;
 
-	public Note(String name, String content,String div) {
+	public Note(String name, String content,String div,String htmlid) {
 		this.content = content;
 		this.name = name;
 		this.div = div;
+		this.htmlid = htmlid;
 	}
 	public String getId() {
 		return this.id;
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
 	}
 	public String getName() {
 		return name;
@@ -40,5 +47,18 @@ public class Note
 	public String getHtmlId() {
 		return htmlid;
 	}
+	@Override
+	public int compareTo(Note o) {
+		int htmlid1 = Integer.parseInt(htmlid);
+		int htmlid2 = Integer.parseInt(o.getHtmlId());
+		if(htmlid1 == htmlid2) {
+			return 0;
+		} else if(htmlid1 > htmlid2) {
+			return 1;
+		} else {
+			return -1;
+		}		
+	}
+	
 
 }

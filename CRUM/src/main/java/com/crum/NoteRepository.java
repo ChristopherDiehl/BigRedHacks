@@ -8,7 +8,7 @@ public interface NoteRepository extends MongoRepository<Note, String> {
 
 	public Note findById(String id);
 	public Note findByName(String name);
-	public ArrayList<Note> findAll();
+	public ArrayList<Note> findAll(); //sort  by id
 	public ArrayList<Note> findAllByDiv(String div);
 
 }
