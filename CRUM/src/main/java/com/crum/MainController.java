@@ -59,6 +59,20 @@ public class MainController {
 		return "index"; 
 	}
 
+	@RequestMapping(value="/deleteNote", method=RequestMethod.POST)
+	public String deleteNote(HttpServletRequest request)
+	{
+		if(request.getParameter("id") == null || request.getParameter("id").equals(""))
+			return "index";
+
+		Note note = noteRepo.findByHtmlid(request.getParameter("id"));
+		if(note == null)
+			return "index";
+
+		noteRepo.delete(note);
+		return "index";
+	}
+
 	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public String login(Model model,HttpServletRequest request)
 	{	
