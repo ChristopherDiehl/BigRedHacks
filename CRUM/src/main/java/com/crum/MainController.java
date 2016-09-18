@@ -37,6 +37,8 @@ public class MainController {
 		ArrayList<Note> div0 = noteRepo.findAllByDiv("div0");
 		ArrayList<Note> div1 = noteRepo.findAllByDiv("div1");
 		ArrayList<Note> div2 = noteRepo.findAllByDiv("div2");
+		ArrayList<Note> div3 = noteRepo.findAllByDiv("noteholder");
+
 		model.put("div0", div0);
 		model.put("div1", div1);
 		model.put("div2",div2);

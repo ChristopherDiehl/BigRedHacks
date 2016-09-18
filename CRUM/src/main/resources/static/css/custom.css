@@ -55,6 +55,11 @@ p.header {
 	display: inline-block;
 }
 
+.note_input{
+    background:rgba(0,0,0,0);
+    border:none;
+}
+
 .padding {
 	margin:10px;
 	padding:10px;
