@@ -38,7 +38,6 @@ body {
 .note_content{
 	padding-top: 15px;
 	padding-left: 10%;
-
 }
 
 /*.container-fluid {
@@ -50,11 +49,13 @@ p.header {
 	display: inline-block;
 	font-size: 20px;
 	font-style: bold;
+	padding-left: 20px;
 }
 
 .floatRight {
 	float: right;
 	display: inline-block;
+	padding-right: 15px;
 }
 
 .note_input{
@@ -66,8 +67,6 @@ p.header {
 	margin:10px;
 	padding:10px;
 }
-
-
 
 .ui-widget-header p, .ui-widget-content p { 
 	margin: 0; 
