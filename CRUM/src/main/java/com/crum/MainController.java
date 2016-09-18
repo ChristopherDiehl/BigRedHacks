@@ -35,8 +35,10 @@ public class MainController {
 	public String saveNote(Model model,HttpServletRequest request)
 	{	
 		String id = request.getParameter("id");
-		if(id == null || id.equals("")) {
-			Note note = noteRepo.findById(id);
+		System.out.println("id: "+id);
+
+		if(id != null && !"".equals(id)) {
+			Note note = noteRepo.findByHtmlid(id);
 			if(note != null) {
 				note.setName(request.getParameter("name"));
 				note.setDiv(request.getParameter("div"));

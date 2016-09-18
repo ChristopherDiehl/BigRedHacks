@@ -24,7 +24,7 @@
           <form th:id="'note' + ${note.htmlId}" action="/saveNote">
             <div class="row note_username img-rounded">
               <input type="text" th:value="${note.name}" style="width: 75%;" class="note_input" value="Username" />
-              <a th:href="'javascript:saveMyNote('+ ${note.htmlId}+')'">
+              <a th:href="'javascript:saveMyNote('+ ${note.htmlId}+'div0)'">
                <span class="glyphicon glyphicon-floppy-disk"></span>
              </a>
            </div>
@@ -38,10 +38,40 @@
     <div class="col-sm-4 div1">
       <p class="header">In Progress</p>
       <a onclick="createNote('noteholder', '')" href="#" class="floatRight"><span class="glyphicon glyphicon-plus"></span></a>
+      <div th:each="note: ${div1}" class="row note img-rounded draggable" >
+        <div class="col-md-10 img-rounded">
+          <form th:id="'note' + ${note.htmlId}" action="/saveNote">
+            <div class="row note_username img-rounded">
+              <input type="text" th:value="${note.name}" style="width: 75%;" class="note_input" value="Username" />
+              <a th:href="'javascript:saveMyNote('+ ${note.htmlId}+'div0)'">
+               <span class="glyphicon glyphicon-floppy-disk"></span>
+             </a>
+           </div>
+           <div class="row note_content">
+             <textarea rows="3" th:value="${note.content}" class="note_input">Content</textarea>
+           </div>
+         </form>
+       </div>
+      </div>
     </div>
     <div class="col-sm-4 div2">
       <p class="header">Complete</p>
       <a onclick="createNote('noteholder','')" href="#" class="floatRight"><span class="glyphicon glyphicon-plus"></span></a>
+      <div th:each="note: ${div2}" class="row note img-rounded draggable" >
+        <div class="col-md-10 img-rounded">
+          <form th:id="'note' + ${note.htmlId}" action="/saveNote">
+            <div class="row note_username img-rounded">
+              <input type="text" th:value="${note.name}" style="width: 75%;" class="note_input" value="Username" />
+              <a th:href="'javascript:saveMyNote('+ ${note.htmlId}+'div0)'">
+               <span class="glyphicon glyphicon-floppy-disk"></span>
+             </a>
+           </div>
+           <div class="row note_content">
+             <textarea rows="3" th:value="${note.content}" class="note_input">Content</textarea>
+           </div>
+         </form>
+       </div>
+      </div>
     </div>     
   </div>
 
@@ -66,11 +96,12 @@ var id = [[${max_id}]]
 id--;
 
 function saveMyNote(id,div) {
+
   var formId = '#note'+id;
   var name = $("input[name='name']" ).val();
   var content=$("textarea[name='content']" ).val();
-
-  $.post( "/saveNote", { name: name, content: content,div:"div0" ,id: id} );
+  console.log('div'+div);
+  $.post( "/saveNote", { name: name, content: content, div:div ,id: id} );
 }
 </script>
 
@@ -79,11 +110,15 @@ function saveMyNote(id,div) {
 $(function(){
     $('.draggable').draggable({
         stop: function(event, ui) {
+          alert('stopped');
           var id = $(this).children(":first").children(":first").attr('id');
+          id = id.replace('note','');
           if($(this).position().top >550 || $(this).position().left < 477){
+        	  console.log('left');
             saveMyNote(id,'div0');
           }
           else if ($(this).position().top<870) {
+            alert('center');
             saveMyNote(id,'div1');
           } else {
             saveMyNote(id,'div2');
@@ -100,7 +135,7 @@ function createNote(divToAppendTo,htmlid) {
     htmlid = id + 1;
     id++;
   }
-  $div = $(' <div class="row note img-rounded draggable" ><form id ="note'+id+'" action="/saveNote"><div class="row note_username img-rounded"><input type="text" style="width: 75%;" name ="name" class="note_input" value="Name" /><a href="javascript:saveMyNote('+id+');">  <span class="glyphicon glyphicon-floppy-disk"></span></a></div> <div class="row note_content"><textarea rows="3" name="content" class="note_input">Content</textarea></div></form></div>');
+  $div = $(' <div class="row note img-rounded draggable" ><form id ="note'+id+'" action="/saveNote"><div class="row note_username img-rounded"><input type="text" style="width: 75%;" name ="name" class="note_input" value="Name" /><a href="javascript:saveMyNote('+id+'div0);">  <span class="glyphicon glyphicon-floppy-disk"></span></a></div> <div class="row note_content"><textarea rows="3" name="content" class="note_input">Content</textarea></div></form></div>');
 
   $('.'+divToAppendTo).append($div);
   $( '.draggable' ).draggable();
