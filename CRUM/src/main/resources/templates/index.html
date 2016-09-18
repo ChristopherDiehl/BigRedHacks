@@ -50,7 +50,7 @@
     </div>
   </div>
   
-  <br style="clear:both"/>
+<!--   <br style="clear:both"/> -->
 
 
 </div>
@@ -74,7 +74,6 @@ function saveMyNote(id) {
 </script>
 
 <script>
-  
 
 function createNote(divToAppendTo,htmlid) {
   if(htmlid == null || htmlid == '') {
@@ -86,6 +85,39 @@ function createNote(divToAppendTo,htmlid) {
   $('.'+divToAppendTo).append($div);
   $( '.draggable' ).draggable();
 }
+</script>
 
+<script th:inline="javascript">
+  var note = $(".note");
+  // note.draggable();
+  var notePositon = note.position();
+  /*<![CDATA[*/
+  $(".note").bind("drag", function(event, ui) {
+    alert('hello');
+    var thirds = $(window).width() / 3;
+    var left = thirds;
+    var center = thirds * 2;
+    var right = thirds * 3;
+    console.log('left: '+left+'center:'+center+'right:'+right);
+    if(notePosition <= left) {
+      alert('notePosition : +'+notePosition+'<= left');
+      sun.addClass('yellow');
+      sun.removeClass('black');
+      sun.removeClass('red');
+    }
+    if(left < notePosition || notePosition <= center) {
+    alert('notePosition : +'+notePosition+'<= center');
+      sun.removeClass('black');
+      sun.removeClass('yellow');
+      sun.addClass('red');
+    }
+    if (center < notePosition || notePosition <= right) {
+    console.log('notePosition : +'+notePosition+'<= right');
+      sun.removeClass('red');
+      sun.removeClass('yellow');
+      sun.addClass('black');
+    }
 
+  });
+  /*]]>*/
 </script>
