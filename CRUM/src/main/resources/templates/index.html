@@ -40,7 +40,6 @@
     </div>
     <div class="col-sm-4 div1">
       <p class="header">In Progress</p>
-      <a onclick="createNote('div0', '')" href="#" class="floatRight"><span class="glyphicon glyphicon-plus"></span></a>
       <div th:each="note: ${div1}" class="row note img-rounded draggable" >
         <div class="col-md-10 img-rounded">
           <form th:id="'note' + ${note.htmlId}" action="/saveNote">
@@ -59,8 +58,7 @@
     </div>
     <div class="col-sm-4 div2">
       <p class="header">Complete</p>
-      <a onclick="createNote('div0','')" href="#" class="floatRight"><span class="glyphicon glyphicon-plus"></span></a>
-      <div th:each="note: ${div2}" class="row note img-rounded draggable" >
+        <div th:each="note: ${div2}" class="row note img-rounded draggable" >
         <div class="col-md-10 img-rounded">
           <form th:id="'note' + ${note.htmlId}" action="/saveNote">
             <div class="row note_username img-rounded">
@@ -80,6 +78,12 @@
 
   <div class="row noteholder">
     <div class="col-sm-12">
+    <p>Copyright &copy; 
+      <script type="text/javascript">
+        document.write(new Date().getFullYear());
+      </script>
+      CRUM
+    </p>
     </div>
   </div>
   

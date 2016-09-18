@@ -40,16 +40,12 @@ body {
 	padding-left: 10%;
 }
 
-/*.container-fluid {
-	height: 100%;
-}*/
-
 p.header {
 	text-align: center;
 	display: inline-block;
 	font-size: 20px;
-	font-style: bold;
-	padding-left: 20px;
+	font-weight: bold;
+	padding-left: 24px;
 }
 
 .floatRight {
@@ -84,4 +80,8 @@ p.header {
 h1 {
 	text-align: center;
 	color: white;
+}
+
+span.glyphicon-plus {
+	font-size: 22px;
 }
